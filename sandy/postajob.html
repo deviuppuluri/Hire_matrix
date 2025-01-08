@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AlwaysApply - Post a Job</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="postajob.css">
+</head>  
+<body>
+    <header>
+        <div class="logo"><img src="job logo.png" id="Hire"><a href="job_search.html" id="main-col"><span>𝝜</span>𝝞Ɍ𝝚 &nbsp;<span>𝝡</span>𝝖𝝩Ɍ𝝞𝝬</a></div>
+        <nav>
+            <a href="job_search.html">Home</a>    
+            <a href="postajob.html" target="_parent">Post_a_Job</a>
+            <a href="help.html" target="_parent">Help</a>
+        </nav>
+        <div class="login">
+            <a href="home.html" target="_parent">Logout</a>
+        </div>
+    </header>
+
+
+    <main>
+        <h1>Post a Job</h1>
+        <p>Find the best talent for your company</p>
+
+        <form action="submit_job.php" method="POST" id="postajobForm">
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="company-name">Company Name</label>
+                    <input type="text" id="company-name" name="company_name" placeholder="Enter company name">
+                </div>
+
+                <div class="form-group">
+                    <label for="job-title">Job Title</label>
+                    <input type="text" id="job-title" name="job-title" placeholder="Add job title, role vacancies etc">
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">Tags</label>
+                    <input type="text" id="tags" name="tags" placeholder="Job keyword, tags etc...">
+                </div>
+
+                <div class="form-group">
+                    <label for="job-role">Job Role</label>
+                    <input type="text" id="job-role" name="job-role" placeholder="Enter job role">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="min-salary">Min Salary</label>
+                    <input type="number" id="min-salary" name="min-salary" placeholder="Minimum Salary"><br><br>
+                    <label for="max-salary">Max Salary</label>
+                    <input type="number" id="max-salary" name="max-salary" placeholder="Maximum Salary">
+                </div>
+
+                <div class="form-group">
+                    <label for="vacancies">Vacancies</label>
+                    <input type="number" id="vacancies" name="vacancies" placeholder="Enter vacancy">
+                    
+                    <br><br>
+                    <label for="job-level">Job Level</label>
+                    <select id="job-level" name="job-level">
+                        <option value="">Select...</option>
+                        <option value="Entry-level">Entry-level</option>
+                        <option value="Mid-level">Mid-level</option>
+                        <option value="Senior-level">Senior-level</option>
+                        <option value="Executive-level">Executive-level</option>
+                        <option value="other">Other</option>
+                    </select><br><br>
+                    <label for="Eligibility">Eligibilty</label>
+                    <input type="text" id="Eligibility" name="Eligibility" placeholder="Eligibilty"><br><br>
+                    <label for="Passout">Passout Years</label>
+                    <input type="text" id="Passout" name="Passout" placeholder="Enter Passout year"><br><br>
+                    <label for="job_type">Job type</label>
+                    <input type="text" id="job_type" name="job_type" placeholder="Enter job type"><br><br>
+                    <label for="Experience">Experience</label>
+                    <input type="number" id="Experience" name="Experience" placeholder="Enter Experience">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="country" placeholder="Enter country name">
+                    
+                    <br><br>
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" placeholder="Enter city">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="job-description">Job Description</label>
+                <textarea id="job-description" name="job-description" placeholder="Add your description..."></textarea>
+            </div>
+
+            <button type="submit">Post a Job</button>
+        </form>
+    </main>
+    <script src="postajob.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /*background-color: #eae4ff ;*/
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    position: fixed;
+    top:0;
+    left:0;
+    width:95%;
+    z-index: 1000;
+}
+#Hire{
+    height: 80px;
+    border-radius: 50%;
+}
+#main-col{
+    text-decoration: none;
+    color: #0000cc;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+header nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #333333;
+    font-size: 16px;
+}
+header nav a:hover{
+    color: black;
+    font-weight: bolder;
+}
+
+header .login a ,button{
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #0000cc;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 15px;
+    border: 1px solid transparent;
+}
+.login a:hover, button:hover{
+    border: 5px solid #4c4cf8;
+}
+
+header .login a:nth-child(1) {
+    background-color: transparent;
+    color: #0000cc;
+    border-color: #0000cc;
+}
+#register{
+    background-color: #047ffb;
+}
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 110px;
+    margin-top: 20px;
+}
+span{
+    font-size: 50px;
+}
+.content .text {
+    max-width: 50%;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 46px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 18px;
+    color: #666666;
+    margin-bottom: 30px;
+}
+
+.content img {
+    max-width: 50%;
+    height: 100%;
+}
+
+h1,p {
+    animation-duration: 3s;
+    animation-name: slide-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.main-content {
+text-align: center;
+padding: 50px 20px;
+background-color: rgb(242, 242, 242);
+}
+
+/* Featured Jobs Section */
+
+.featured-jobs {
+    background-color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.featured-jobs h2 {
+    margin-top: -30px;
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.job-listings {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.job-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 25%;
+    margin:50px;
+}
+
+.job-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.job-item h3 {
+    font-size: 1.5rem;
+    color: black;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.job-item p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.job-item button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.job-item button:hover {
+    background-color: #0056b3;
+}
+
+/* Company Profiles Section */
+.company-profiles {
+    background-color: white;
+    padding: 50px 0;
+}
+
+.company-profiles h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.company-listings {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.company-item {
+    background-color: white;
+    padding: 20px;
+    width: 25%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin:50px;
+}
+
+.company-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.company-item h3 {
+    font-size: 1.5rem;
+    color: black;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.company-item p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.company-item button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.company-item button:hover {
+    background-color: #0056b3;
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content .text {
+        max-width: 100%;
+    }
+
+    .content img {
+        max-width: 60%;
+        margin-top: 20px;
+    }
+}

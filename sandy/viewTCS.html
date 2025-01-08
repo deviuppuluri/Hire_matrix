@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details - Online Job Portal</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+}
+
+/* Job card container */
+.job-card {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Job header - Title and company name */
+.job-header {
+    margin-bottom: 20px;
+}
+
+.job-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.company-name {
+    font-size: 18px;
+    color: #555;
+}
+
+/* View Details button */
+.view-details-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.view-details-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Job details section */
+.job-details {
+    display: none;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.job-details h3 {
+    font-size: 20px;
+    color: #333;
+}
+
+.job-details p ,ul li{
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.job-details h4 {
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px;
+}
+
+.job-details a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.job-details a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Job Listing Card -->
+    <div class="job-card">
+        <!-- Job Title and Company -->
+        <div class="job-header">
+            <h2 class="job-title">Machine Learning Engineer</h2>
+            <p class="company-name">TCS</p>
+        </div>
+        
+        <!-- Button to Toggle Details -->
+        <button class="view-details-btn" onclick="toggleDetails()">View Details</button>
+
+        <!-- Job Details Section (Initially Hidden) -->
+        <div class="job-details" id="job-details">
+            <h3>Job Role: Machine Learning Engineer</h3>
+            <p><strong>Job Description:</strong>We are seeking a talented Machine Learning Engineer to join our innovative team. The ideal candidate will be responsible for developing and deploying machine learning models to improve our products and services. As a Machine Learning Engineer, you will work with large datasets, apply machine learning techniques, and implement solutions that drive business growth and enhance customer experiences.<br>
+                <ul>
+                    <li>Model Development and Deployment: Design, build, and deploy machine learning models to solve business problems across various domains.</li>
+                    <li>Data Processing and Feature Engineering: Collaborate with data engineers and analysts to clean, preprocess, and analyze large datasets.</li>
+                    <li>Model Evaluation and Optimization: Optimize models for performance, speed, and scalability.</li>
+                    <li>Research and Innovation: Experiment with and apply new machine learning techniques, frameworks, and libraries to improve existing models or create innovative solutions.</li>
+                </ul>
+                <p><strong>Required Skills & Qualifications:</strong></p>
+                <ul>
+                    <li>Proficiency in programming languages like Python, R, or Java.</li>
+                    <li>Experience with machine learning libraries and frameworks such as TensorFlow, PyTorch, Keras, Scikit-learn, or similar.</li>
+                    <li>Strong understanding of data structures and algorithms.</li>
+                    <li>Knowledge of cloud platforms (AWS, Azure, GCP) and deploying models at scale.</li>
+                    <li>Experience in data preprocessing, feature engineering, and working with large datasets.</li>
+                    <li>Ability to work with SQL and NoSQL databases to query and manipulate large datasets.</li>
+                </ul> 
+            </p>
+            <p><strong>Eligibility: </strong>B.Tech ,B.Com More than 65% </p>
+            <p> <strong>Passout :</strong> 2021, 2022, 2023, 2024 and 2025</p>
+            <p><strong>Job Type: </strong>PART-TIME JOB</p>
+            <p><strong>Salary Package:</strong>20,000 INR to 33,0000 INR per annum</p>
+            <p><strong>Experience Required:</strong> 0 to 2+ years</p>
+
+            <h4>About the Company</h4> 
+            <p><strong>Company Name:</strong>Tata Consultancy Services</p>
+            <p><strong>About:</strong>TCS stands for Tata Consultancy Services, a multinational IT services corporation. It works in various areas, including finance, education, etc., to deliver software and consulting services. The HR rounds are where the recruitment process begins and ends.</p>
+            <p><strong>Location:</strong> Chennai, India</p>
+            <p><strong>Website:</strong> <a href="https://en.wikipedia.org/wiki/Tata_Consultancy_Services" target="_blank">www.tcs.com</a></p>
+            <a href="apply.html"> <button class="view-details-btn">Apply Now</button></a>
+        </div>
+        
+    </div>
+
+    <script>
+        // Function to toggle visibility of job details
+        function toggleDetails() {
+            const details = document.getElementById('job-details');
+            details.style.display = (details.style.display === 'none' || details.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+
+</body>
+</html>  

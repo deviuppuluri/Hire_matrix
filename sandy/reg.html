@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal Registration</title>
+    <link rel="stylesheet" href="reg.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="job logo.png" id="Hire"><a href="home.html" id="main-col"><span>𝝜</span>𝝞Ɍ𝝚 &nbsp;<span>𝝡</span>𝝖𝝩Ɍ𝝞𝝬</a></div>
+        <nav>
+            <a href="home.html">Home</a>    
+            <a href="about_us.html">About_Us</a>
+            <a href="feedback.html" target="_parent">Feedback</a>
+        </nav>
+        <div class="login">
+            <a href="contact.html" target="_parent">Contact Us</a>
+            <a href="login.html">Login</a>
+        </div>
+    </header>
+    <div class="registration-container">
+        <h2>Job Portal Registration</h2>
+
+        <!-- Registration Form -->
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="user_type">Register as:</label>
+                <select id="user_type" name="user_type" required>
+                    <option value="select">Select</option>
+                    <option value="job_seeker">Job Seeker</option>
+                    <option value="employer">Employer</option>
+                </select>
+            </div>
+
+            <!-- Personal Information -->
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="eg:abc@gmail.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91xxxxxxxxxx" maxlength="10" required>
+            </div>
+
+            <!-- Job Seeker Information -->
+            <div id="job-seeker-info" style="display:none;">
+                <div class="form-group">
+                    <label for="skills">Skills:</label>
+                    <input type="text" id="skills" name="skills" placeholder="e.g., Java, Python">
+                </div>
+
+                <div class="form-group">
+                    <label for="experience">Years of Experience:</label>
+                    <input type="number" id="experience" name="experience" placeholder="experience">
+                </div>
+            </div>
+
+            <!-- Employer Information -->
+            <div id="employer-info" style="display:none;">
+                <div class="form-group">
+                    <label for="company_name">Company Name:</label>
+                    <input type="text" id="company_name" name="company_name" placeholder="company name">
+                </div>
+
+                <div class="form-group">
+                    <label for="company_website">Company Website:</label>
+                    <input type="url" id="company_website" name="company_website" placeholder="website">
+                </div>
+
+                <div class="form-group">
+                    <label for="company_address">Company Address:</label>
+                    <input type="text" id="company_address" name="company_address" placeholder="Address">
+                </div>
+            </div>
+
+            <!-- Account Credentials -->
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="password" required>
+            </div>
+            <button type="submit" id="hover">Submit</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js";
+        import { getFirestore, addDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+        apiKey: "AIzaSyDXm_lnJc3R36WAB7wCTrj-qbdjfsSyI6g",
+        authDomain: "job-4aef7.firebaseapp.com",
+        projectId: "job-4aef7",
+        storageBucket: "job-4aef7.firebasestorage.app",
+        messagingSenderId: "87979659611",
+        appId: "1:87979659611:web:cd366f1ca9c43f5d108a7e"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        const registrationForm = document.getElementById('registrationForm');
+        const userTypeSelect = document.getElementById('user_type');
+        const jobSeekerInfo = document.getElementById('job-seeker-info');
+        const employerInfo = document.getElementById('employer-info');
+
+        // Toggle form sections based on user type selection
+        userTypeSelect.addEventListener('change', function() {
+            if (this.value === 'job_seeker') {
+                jobSeekerInfo.style.display = 'block';
+                employerInfo.style.display = 'none';
+            } else {
+                jobSeekerInfo.style.display = 'none';
+                employerInfo.style.display = 'block';
+            }
+        });
+
+        registrationForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const user_type = document.getElementById("user_type").value;
+            const first_name = document.getElementById("first_name").value;
+            const last_name = document.getElementById("last_name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const skills = document.getElementById("skills").value;
+            const experience = document.getElementById("experience").value;
+            const company_name = document.getElementById("company_name").value;
+            const company_website = document.getElementById("company_website").value;
+            const company_address = document.getElementById("company_address").value;
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const confirm_password = document.getElementById("confirm_password").value;
+
+            if (password !== confirm_password) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            try {
+                // Register the user in Firebase Authentication
+                await createUserWithEmailAndPassword(auth, email, password);
+
+                // Store user data in Firestore
+                if (user_type === 'job_seeker') {
+                    await addDoc(collection(db, 'seeker'), {
+                        user_type,
+                        first_name,
+                        last_name,
+                        email,
+                        phone,
+                        skills,
+                        experience,
+                        username,
+                        password
+                    });
+                } else {
+                    await addDoc(collection(db, 'employer'), {
+                        user_type,
+                        first_name,
+                        last_name,
+                        email,
+                        phone,
+                        company_name,
+                        company_website,
+                        company_address,
+                        username,
+                        password
+                    });
+                }
+
+                //alert("User registered successfully!");
+                window.location.href = "regthank.html";
+                registrationForm.reset();
+                jobSeekerInfo.style.display = 'none';
+                employerInfo.style.display = 'none';
+            } catch (error) {
+                alert("Error: " + error.message);
+            }
+        });
+    </script>
+
+</body>
+</html>

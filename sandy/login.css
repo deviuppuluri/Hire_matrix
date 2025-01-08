@@ -1,0 +1,124 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/*
+header {
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+nav {
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 0 10px;
+    color: #333;
+}
+    */
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-top: 200px;
+    margin-left: 500px;
+}
+
+.login-container ,.head {
+    width: 40%;
+    border: 1px solid #ddd;
+    border-radius: 5px;  
+}
+
+.login-container{
+    width:50%;
+    border: none;
+}
+
+.login-container #tag,h1 {
+    text-align: center;
+}
+#tag{
+    font-family: monospace;
+    font-size: 20px;
+    margin-top: -10px;
+}
+
+.login-container form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container label {
+    margin-bottom: 5px;
+}
+
+.login-container input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-container button {
+    background-color: #047ffb;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width:100%;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #1b89f7;
+}
+button a{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.login-container .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.login-container .remember-forgot label {
+    margin-right: 20px;
+}
+
+.login-container .social-login {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.login-container .social-login a {
+    margin: 0 10px;
+    color: #333;
+}
+
+.login-container .social-login a i {
+    font-size: 24px;
+}
+
+.image-container {
+    width: 50%;
+}
+
+footer {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+}
+
+
+

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <link rel="stylesheet" href="apply.css">
+    <script>
+        function toggleFields() {
+            var educationType = document.querySelector('input[name="education-type"]:checked').value;
+            if (educationType === "Intermediate") {
+                document.getElementById("intermediate-fields").style.display = "block";
+                document.getElementById("diploma-fields").style.display = "none";
+            } else if (educationType === "Diploma") {
+                document.getElementById("diploma-fields").style.display = "block";
+                document.getElementById("intermediate-fields").style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Application Form</h1>
+        <form action="#" method="POST" enctype="multipart/form-data">
+            
+            <!-- Personal Information -->
+            <div class="form-section">
+                <h2>Personal Information</h2>
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" placeholder="Enter first name" required>
+                
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" placeholder="Enter last name" required>
+                
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="eg: abc@gmail.com" required>
+                
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" placeholder="+91xxxxxxxxxx" maxlength="10" required>
+
+                <label for="gender">Gender:</label>
+                
+                <input type="radio" id="gender" name="type" value="Male">Male
+                <input type="radio" id="gender" name="type" value="Female">Female
+                <input type="radio" id="gender" name="type" value="Other">Other
+                
+            </div>
+
+           
+
+            <!-- Academic Details -->
+            <div class="form-section">
+                <h2>Academic Details</h2>
+                
+                <!-- 10th -->
+                 <h4>SSC DETAILS</h4>
+                <label for="tenth-school">10th School Name:</label>
+                <input type="text" id="tenth-school" name="tenth-school" placeholder="School Name" required>
+                
+                <label for="tenth-percentage">10th Percentage:</label>
+                <input type="number" id="tenth-percentage" name="tenth-percentage" min="0" max="100" placeholder="Percentage" required>
+                
+                <label for="tenth-passed-year">10th Passed Year:</label>
+                <input type="number" id="tenth-passed-year" name="tenth-passed-year" placeholder="Passed Year" required>
+
+
+                <label>Type of Education (Intermediate or Diploma):</label><br>
+                <input type="radio" id="inter" name="education-type" value="Intermediate" onchange="toggleFields()" required>Intermediate
+                
+                <input type="radio" id="diploma" name="education-type" value="Diploma" onchange="toggleFields()">Diploma
+                
+                <!-- Intermediate -->
+                <div id="intermediate-fields" style="display:none;">
+                    <h4>INTERMEDIATE DETAILS</h4>
+                    <label for="inter-school-college">Intermediate College Name:</label>
+                    <input type="text" id="inter-school-college" name="inter-school-college" placeholder="College Name" required>
+                    
+                    <label for="inter-percentage">Intermediate Percentage:</label>
+                    <input type="number" id="inter-percentage" name="inter-percentage" min="0" max="100" placeholder="Percentage" required>
+
+                    <label for="inter-passed-year">Intermediate Passed Year:</label>
+                    <input type="number" id="inter-passed-year" name="inter-passed-year" placeholder="Passed Year" required>
+
+                    <label for="inter-branch">Branch (Intermediate):</label>
+                    <input type="text" id="inter-branch" name="inter-branch" placeholder="Stream" required>
+                </div>
+
+                <!-- Diploma -->
+                <div id="diploma-fields" style="display:none;">
+                    <h4>DIPLOMA DETAILS</h4>
+                    <label for="diploma-college">Diploma College Name:</label>
+                    <input type="text" id="diploma-college" name="diploma-college" placeholder="College Name" required>
+
+                    <label for="diploma-percentage">Diploma Percentage:</label>
+                    <input type="number" id="diploma-percentage" name="diploma-percentage" min="0" max="100" placeholder="Percentage" required>
+
+                    <label for="diploma-passed-year">Diploma Passed Year:</label>
+                    <input type="number" id="diploma-passed-year" name="diploma-passed-year" placeholder="Passed Year" required>
+
+                    <label for="diploma-branch">Branch (Diploma):</label>
+                    <input type="text" id="diploma-branch" name="diploma-branch" placeholder="Stream" required>
+                </div>
+
+                
+
+                <!-- Undergraduate -->
+                <h4>UNDERGRADUATE</h4>
+                <label for="ug-college">Undergraduate College Name:</label>
+                <input type="text" id="ug-college" name="ug-college" placeholder="College Name" required>
+                
+                <label for="ug-percentage">Undergraduate Percentage (UG):</label>
+                <input type="number" id="ug-percentage" name="ug-percentage" min="0" max="100" placeholder="Percentage" required>
+                
+                <label for="ug-graduation-year">Undergraduate Graduation Year:</label>
+                <input type="number" id="ug-graduation-year" name="ug-graduation-year" placeholder="Passed Year" required>
+                
+                <label for="ug-backlogs">Number of Active Backlogs (UG):</label>
+                <input type="number" id="ug-backlogs" name="ug-backlogs" min="0" placeholder="No.of Backlogs" required>
+            </div>
+             <!-- Resume Upload -->
+             <div class="form-section">
+                <h2>Resume Upload</h2>
+                <label for="resume">Upload Resume (PDF only):</label>
+                <input type="file" id="resume" name="resume" accept=".pdf" required>
+            </div>
+        </form>
+        <!-- Submit Button -->
+        <div class="form-section">
+            <a href="thankyou.html"><button>Submit Application</button></a>
+        </div>
+    </div>
+
+</body>
+</html>
+

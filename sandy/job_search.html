@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search</title>
+    <link rel="stylesheet" href="job_search.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="job logo.png" id="Hire"><a href="job_search.html" id="main-col"><span>𝝜</span>𝝞Ɍ𝝚 &nbsp;<span>𝝡</span>𝝖𝝩Ɍ𝝞𝝬</a></div>
+        <nav>
+            <a href="job_search.html" target="_parent">Home</a>    
+            <a href="postajob.html" target="_parent">Post_a_Job</a>
+            <a href="help.html" target="_parent">Help</a>
+        </nav>
+        <div class="login">
+            <a href="home.html" target="_parent" id="logout" class="btn">Logout</a>
+        
+            <img src="https://e7.pngegg.com/pngimages/136/22/png-clipart-user-profile-computer-icons-girl-customer-avatar-angle-heroes-thumbnail.png" alt="User Avatar" class="avatar" onclick="toggleDropdown()">
+            <div id="myDropdown" class="dropdown">
+                <a href="editprofile.html">Edit Profile</a>
+                <a href="home.html">Logout</a>
+            </div>
+        </div>
+    </header>
+ 
+    <section class="job-search">
+        <h1>Job Search</h1>
+        <p>Search for your desired job matching your skills</p>
+        <form>
+             <input type="text" placeholder="Enter Job Title"  class="space">
+             <input type="text" placeholder="Enter Location" class="space">
+             <input type="number" placeholder="Years of Experience" class="space" >  
+             <button id="view" type="submit" >Search</button>
+            </form>
+        </section>
+    
+        <section class="job-listings">
+            <h2>All Jobs </h2>
+            <div class="job-listing">
+                <h3>Technical Support <br> Specialist</h3>
+                <div >
+                    <p >PART-TIME JOB </p>
+                    <p>Salary: 20,000 INR  25,000 INR </p>
+                    <p>Experience : 3 or 3+ years</p> 
+                   
+                </div>
+                
+                <div class="company-logo">
+                    <img src="https://1000logos.net/wp-content/uploads/2021/04/Accenture-logo.png" alt="accenture Logo">
+                </div>
+                <div class="job-details">
+                    <p>Accenture.</p>
+                    <p>New Delhi, India</p>
+                    <p>10+ applicants</p>
+                </div>
+                <div class="buttons">
+                    <a href="viewACC.html"><button id="view">View Details</button></a> 
+                    <a href="apply.html"><button>Apply Now</button></a>
+                </div>
+            </div>
+    
+            </section>
+    
+            <section class="job-listings">
+                <div class="job-listing">
+                    <h3>DevOps Engineer </h3>
+                    <div >
+                        <p >FULL-TIME JOB </p>
+                        <p>Salary: 30,000 INR  55,000 INR </p>
+                        <p>Experience : 0 to 3+ years</p> 
+                       
+                    </div>
+                    
+                    <div class="company-logo">
+                        <img src="https://static.vecteezy.com/system/resources/previews/020/336/451/non_2x/infosys-logo-infosys-icon-free-free-vector.jpg" alt="Infosys Logo">
+                    </div>
+                    <div class="job-details">
+                        <p>Infosys.</p>
+                        <p>Mumbai, India</p>
+                        <p>21+ applicants</p>
+                    </div>
+                    <div class="buttons">
+                        <a  href="viewINFOSYS.html"><button id="view">View Details</button></a>
+                        <a href="apply.html"><button>Apply Now</button></a>
+                    </div>
+                </div>
+        
+                </section>
+    
+                <section class="job-listings">
+                    <div class="job-listing">
+                        <h3>Financial Accountant</h3>
+                        <div >
+                            <p >FULL TIME JOB </p>
+                            <p>Salary: 70,000 INR  85,000 INR </p>
+                            <p>Experience : 5 to 7+ years</p> 
+                           
+                        </div>
+                        
+                        <div class="company-logo">
+                            <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="Google Logo">
+                        </div>
+                        <div class="job-details">
+                            <p>Google.</p>
+                            <p>Banglore, India</p>
+                            <p>44+ applicants</p>
+                        </div>
+                        <div class="buttons">
+                            <a  href="viewGOOGLE.html"><button id="view">View Details</button></a>
+                            <a href="apply.html"><button>Apply Now</button></a>
+                        </div>
+                    </div>
+            
+                    </section>
+    
+                    <section class="job-listings">
+                        <div class="job-listing">
+                            <h3>Machine Learning <br> Engineer</h3>
+                            <div >
+                                <p >PART-TIME JOB </p>
+                                <p>Salary: 20,000 INR  33,000 INR </p>
+                                <p>Experience : 0 to 2+ years</p> 
+                               
+                            </div>
+                            
+                            <div class="company-logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/2560px-Tata_Consultancy_Services_Logo.svg.png" alt="TCS Logo">
+                            </div>
+                            <div class="job-details">
+                                <p>TCS.</p>
+                                <p>Chennai, India</p>
+                                <p>20+ applicants</p>
+                            </div>
+                            <div class="buttons">
+                                <a href="viewTCS.html"><button id="view">View Details</button></a>
+                                <a href="apply.html"><button>Apply Now</button></a>
+                            </div>
+                        </div>
+                
+                        </section>
+    
+        <!--<section class="filters">
+            <h3>Filter</h3>
+            <label for="salary-range">Salary Range:</label>
+            <input type="text" id="salary-range">
+    
+        </section>-->
+    
+            <script>
+                function toggleDropdown() {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                }
+        
+                // Close the dropdown if the user clicks outside of it
+                window.onclick = function(event) {
+                    if (!event.target.matches('.avatar')) {
+                        var dropdowns = document.getElementsByClassName("dropdown");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                            }
+                        }
+                    }
+                }
+            </script>
+        
+    </body>
+    </html>

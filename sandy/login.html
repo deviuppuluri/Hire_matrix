@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlwaysApply - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+   
+    <main class="head">
+        <div class="login-container">
+            <h1>Login</h1>
+            <p id="tag">Discover what's next!</p>
+
+            <form id="loginForm">
+                <label for="email">Email ID / Username:</label>
+                <input type="text" id="email" name="email" placeholder="eg:abc@gmail.com"><br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter password"><br>
+
+                <div class="remember-forgot">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button>Login</button>
+            </form>
+             
+
+            <p>Don't have an account? <a href="reg.html">Register</a></p>
+            
+        </div>
+
+        <div class="image-container">
+            <img src="https://www.webnox.in/wp-content/uploads/2022/10/Job-Portal-Software.png" alt="Login Illustration">
+        </div>
+    </main>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+        apiKey: "AIzaSyDXm_lnJc3R36WAB7wCTrj-qbdjfsSyI6g",
+        authDomain: "job-4aef7.firebaseapp.com",
+        projectId: "job-4aef7",
+        storageBucket: "job-4aef7.firebasestorage.app",
+        messagingSenderId: "87979659611",
+        appId: "1:87979659611:web:cd366f1ca9c43f5d108a7e"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        const loginForm = document.getElementById('loginForm');
+        
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            try {
+                // Sign in the user
+                await signInWithEmailAndPassword(auth, email, password);
+                
+                // If login is successful, redirect the user
+                alert("Login successful!");
+                window.location.href = "job_search.html";  // Redirect to your desired page
+
+            } catch (error) {
+                alert("Error: " + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

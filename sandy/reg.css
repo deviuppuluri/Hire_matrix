@@ -1,0 +1,154 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index: 1000
+}
+#main-col{
+    text-decoration: none;
+    color: #0000cc;
+}
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+header nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #333333;
+    font-size: 16px;
+}
+header nav a:hover{
+    color: black;
+    font-weight: bolder;
+}
+
+header .login a ,button{
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #0000cc;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 15px;
+    border: 1px solid transparent;
+}
+.login a:hover, button:hover{
+    border: 5px solid #4c4cf8;
+}
+  
+header .login a:nth-child(1) {
+    background-color: transparent;
+    color: #0000cc;
+    border-color: #0000cc;
+}
+h2 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+}
+#Hire{
+    height: 80px;
+    border-radius: 50%;
+}
+span{
+    font-size: 50px;
+}
+
+/* Registration Form Container */
+.registration-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    margin-top: 7%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="file"],
+input[type="url"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#hover {
+    width: 95%;
+    padding: 10px;
+    background-color: #047ffb;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#hover:hover {
+    background-color: #3f99f3;
+}
+    
+
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: #047ffb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Hide additional sections initially */
+#job-seeker-info,
+#employer-info {
+    display: none;
+}

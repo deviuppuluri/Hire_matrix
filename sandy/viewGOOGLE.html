@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details - Online Job Portal</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+}
+
+/* Job card container */
+.job-card {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Job header - Title and company name */
+.job-header {
+    margin-bottom: 20px;
+}
+
+.job-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.company-name {
+    font-size: 18px;
+    color: #555;
+}
+
+/* View Details button */
+.view-details-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.view-details-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Job details section */
+.job-details {
+    display: none;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.job-details h3 {
+    font-size: 20px;
+    color: #333;
+}
+
+.job-details p ,ul li{
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.job-details h4 {
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px;
+}
+
+.job-details a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.job-details a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Job Listing Card -->
+    <div class="job-card">
+        <!-- Job Title and Company -->
+        <div class="job-header">
+            <h2 class="job-title">Financial Accountant</h2>
+            <p class="company-name">Google</p>
+        </div>
+        
+        <!-- Button to Toggle Details -->
+        <button class="view-details-btn" onclick="toggleDetails()">View Details</button>
+
+        <!-- Job Details Section (Initially Hidden) -->
+        <div class="job-details" id="job-details">
+            <h3>Job Role: Financial Accountant</h3>
+            <p><strong>Job Description:</strong>We are seeking an experienced and detail-oriented Financial Accountant to join our finance team. The ideal candidate will play a key role in preparing financial statements, managing accounts, and ensuring the accuracy and integrity of our financial records.<br>
+                <ul>
+                    <li>Financial Reporting: Assist in the preparation of annual budgets, forecasts, and variance analysis.</li>
+                    <li>Accounts Payable and Receivable: Oversee accounts payable and accounts receivable processes to ensure timely payment and collection.</li>
+                    <li>Taxation: Stay updated on changes in tax regulations and accounting standards, advising management on their impact.</li>
+                    <li>Financial Analysis: Conduct financial analysis to identify trends, variances, and potential areas of improvement in company performance.</li>
+                </ul>
+                <p><strong>Required Skills & Qualifications:</strong></p>
+                <ul>
+                    <li>Strong proficiency in accounting software (e.g., QuickBooks, Xero, SAP, Oracle).</li>
+                    <li>Excellent understanding of Microsoft Excel for financial modeling and reporting.</li>
+                    <li>In-depth knowledge of accounting principles, standards (IFRS, GAAP), and financial regulations.</li>
+                    <li>Strong attention to detail and ability to work under pressure to meet deadlines.</li>
+                    <li>Ability to maintain confidentiality and handle sensitive financial information with integrity.</li>
+                    <li>Excellent communication and interpersonal skills, with the ability to collaborate across departments.</li>
+                </ul> 
+            </p>
+            <p><strong>Eligibility: </strong>B.Tech ,B.Com More than 65% </p>
+            <p> <strong>Passout :</strong> 2021, 2022, 2023, 2024</p>
+            <p><strong>Job Type: </strong>FULL-TIME JOB</p>
+            <p><strong>Salary Package:</strong>70,000 INR to 85,0000 INR per annum</p>
+            <p><strong>Experience Required:</strong> 5 to 7+ years </p>
+
+            <h4>About the Company</h4> 
+            <p><strong>Company Name:</strong>Google</p>
+            <p><strong>About:</strong>Google's full form is <u>Global Organisation of Oriented Group Language of Earth</u>. It was founded in 1998 by Larry Page and Sergey Brin, two Stanford University students. “To organise the world's information and make it widely accessible and valuable,” the organisation's mission states.</p>
+            <p><strong>Location:</strong> Banglore, India</p>
+            <p><strong>Website:</strong> <a href="https://en.wikipedia.org/wiki/Google" target="_blank">www.google.com</a></p>
+            <a href="apply.html"> <button class="view-details-btn">Apply Now</button></a>
+        </div>
+        
+    </div>
+
+    <script>
+        // Function to toggle visibility of job details
+        function toggleDetails() {
+            const details = document.getElementById('job-details');
+            details.style.display = (details.style.display === 'none' || details.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+
+</body>
+</html>  
