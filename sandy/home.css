@@ -260,6 +260,8 @@ footer p {
     font-size: 0.9rem;
 }
 
+
+
 @media (max-width: 768px) {
     .content {
         flex-direction: column;
@@ -273,5 +275,32 @@ footer p {
     .content img {
         max-width: 60%;
         margin-top: 20px;
+    }
+}
+
+
+/* Add this CSS code to your styles.css file */
+
+.animated-image {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    transform: scale(1);
+    animation: scaleFadeInOut 5s ease-in-out infinite; /* Adjust the duration to your preference */
+}
+
+/* Keyframes for scaling and fading animation */
+@keyframes scaleFadeInOut {
+    0% {
+        opacity: 1;
+        transform: scale(1); /* Start at normal size */
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05); /* Scale slightly larger at the midpoint */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Return to normal size */
     }
 }
