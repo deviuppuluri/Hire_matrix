@@ -5,26 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application Form</title>
     <link rel="stylesheet" href="apply.css">
-    <script>
-        function toggleFields() {
-            var educationType = document.querySelector('input[name="education-type"]:checked').value;
-            if (educationType === "Intermediate") {
-                document.getElementById("intermediate-fields").style.display = "block";
-                document.getElementById("diploma-fields").style.display = "none";
-            } else if (educationType === "Diploma") {
-                document.getElementById("diploma-fields").style.display = "block";
-                document.getElementById("intermediate-fields").style.display = "none";
-            }
-        }
-    </script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
 </head>
 <body>
 
     <div class="form-container">
         <h1>Application Form</h1>
-        <form action="#" method="POST" enctype="multipart/form-data">
+        <form id="application-form" enctype="multipart/form-data">
             
-            <!-- Personal Information -->
+            <!-- Personal Information -->  
             <div class="form-section">
                 <h2>Personal Information</h2>
                 <label for="first-name">First Name:</label>
@@ -38,99 +28,98 @@
                 
                 <label for="contact">Contact Number:</label>
                 <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" placeholder="+91xxxxxxxxxx" maxlength="10" required>
-
-                <label for="gender">Gender:</label>
                 
-                <input type="radio" id="gender" name="type" value="Male">Male
-                <input type="radio" id="gender" name="type" value="Female">Female
-                <input type="radio" id="gender" name="type" value="Other">Other
-                
+                <label>Gender:</label>
+                <input type="radio" id="gender-male" name="gender" value="Male" required> Male
+                <input type="radio" id="gender-female" name="gender" value="Female" required> Female
+                <input type="radio" id="gender-other" name="gender" value="Other" required> Other
             </div>
 
-           
-
-            <!-- Academic Details -->
+            <!-- Qualification Selection (Intermediate and Diploma only) -->
             <div class="form-section">
-                <h2>Academic Details</h2>
-                
-                <!-- 10th -->
-                 <h4>SSC DETAILS</h4>
-                <label for="tenth-school">10th School Name:</label>
-                <input type="text" id="tenth-school" name="tenth-school" placeholder="School Name" required>
-                
-                <label for="tenth-percentage">10th Percentage:</label>
-                <input type="number" id="tenth-percentage" name="tenth-percentage" min="0" max="100" placeholder="Percentage" required>
-                
-                <label for="tenth-passed-year">10th Passed Year:</label>
-                <input type="number" id="tenth-passed-year" name="tenth-passed-year" placeholder="Passed Year" required>
+                <h2>Educational Information</h2>
 
+                <!-- SSC Fields (Separate container, not part of selection) -->
+                <div id="ssc-fields" class="form-section">
+                    <h2>SSC Details</h2>
+                    <label for="ssc-board">SSC Board:</label>
+                    <input type="text" id="ssc-board" name="ssc-board" placeholder="Enter SSC Board name" required>
+            
+                    <label for="ssc-year">Year of Completion:</label>
+                    <input type="text" id="ssc-year" name="ssc-year" placeholder="Enter SSC year of completion" required>
 
-                <label>Type of Education (Intermediate or Diploma):</label><br>
-                <input type="radio" id="inter" name="education-type" value="Intermediate" onchange="toggleFields()" required>Intermediate
+                    <label for="ssc-cgpa">CGPA:</label>
+                    <input type="text" id="ssc-cgpa" name="ssc-cgpa" placeholder="Enter cgpa" required>
+                </div>
                 
-                <input type="radio" id="diploma" name="education-type" value="Diploma" onchange="toggleFields()">Diploma
-                
-                <!-- Intermediate -->
+                <label for="qualification">Qualification:</label>
+                <select id="qualification" name="qualification" required>
+                    <option value="">Select Qualification</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="diploma">Diploma</option>
+                </select>
+
+                <!-- Intermediate Fields -->
                 <div id="intermediate-fields" style="display:none;">
-                    <h4>INTERMEDIATE DETAILS</h4>
-                    <label for="inter-school-college">Intermediate College Name:</label>
-                    <input type="text" id="inter-school-college" name="inter-school-college" placeholder="College Name" required>
-                    
-                    <label for="inter-percentage">Intermediate Percentage:</label>
-                    <input type="number" id="inter-percentage" name="inter-percentage" min="0" max="100" placeholder="Percentage" required>
+                    <label for="intermediate-board">Intermediate Board:</label>
+                    <input type="text" id="intermediate-board" name="intermediate-board" placeholder="Enter Intermediate Board name">
+        
+                    <label for="intermediate-year">Year of Completion:</label>
+                    <input type="text" id="intermediate-year" name="intermediate-year" placeholder="Enter Intermediate year of completion">
 
-                    <label for="inter-passed-year">Intermediate Passed Year:</label>
-                    <input type="number" id="inter-passed-year" name="inter-passed-year" placeholder="Passed Year" required>
-
-                    <label for="inter-branch">Branch (Intermediate):</label>
-                    <input type="text" id="inter-branch" name="inter-branch" placeholder="Stream" required>
+                    <label for="intermediate-percentage">Percentage:</label>
+                    <input type="text" id="intermediate-percentage" name="intermediate-percentage" placeholder="Enter Intermediate percentage">
                 </div>
 
-                <!-- Diploma -->
+                <!-- Diploma Fields -->
                 <div id="diploma-fields" style="display:none;">
-                    <h4>DIPLOMA DETAILS</h4>
-                    <label for="diploma-college">Diploma College Name:</label>
-                    <input type="text" id="diploma-college" name="diploma-college" placeholder="College Name" required>
+                    <label for="diploma-college">Diploma College:</label>
+                    <input type="text" id="diploma-college" name="diploma-college" placeholder="Enter Diploma College name">
 
-                    <label for="diploma-percentage">Diploma Percentage:</label>
-                    <input type="number" id="diploma-percentage" name="diploma-percentage" min="0" max="100" placeholder="Percentage" required>
+                    <label for="diploma-year">Year of Completion:</label>
+                    <input type="text" id="diploma-year" name="diploma-year" placeholder="Enter Diploma year of completion">
 
-                    <label for="diploma-passed-year">Diploma Passed Year:</label>
-                    <input type="number" id="diploma-passed-year" name="diploma-passed-year" placeholder="Passed Year" required>
-
-                    <label for="diploma-branch">Branch (Diploma):</label>
-                    <input type="text" id="diploma-branch" name="diploma-branch" placeholder="Stream" required>
+                    <label for="diploma-Percentage">Percentage:</label>
+                    <input type="text" id="diploma-Percentage" name="diploma-Percentage" placeholder="Enter Diploma percentage">
                 </div>
-
-                
-
-                <!-- Undergraduate -->
-                <h4>UNDERGRADUATE</h4>
-                <label for="ug-college">Undergraduate College Name:</label>
-                <input type="text" id="ug-college" name="ug-college" placeholder="College Name" required>
-                
-                <label for="ug-percentage">Undergraduate Percentage (UG):</label>
-                <input type="number" id="ug-percentage" name="ug-percentage" min="0" max="100" placeholder="Percentage" required>
-                
-                <label for="ug-graduation-year">Undergraduate Graduation Year:</label>
-                <input type="number" id="ug-graduation-year" name="ug-graduation-year" placeholder="Passed Year" required>
-                
-                <label for="ug-backlogs">Number of Active Backlogs (UG):</label>
-                <input type="number" id="ug-backlogs" name="ug-backlogs" min="0" placeholder="No.of Backlogs" required>
             </div>
-             <!-- Resume Upload -->
-             <div class="form-section">
+
+            
+
+            <!-- Undergraduate Fields (Separate container, not part of selection) -->
+            <div id="undergraduate-fields" class="form-section">
+                <h2>Undergraduate Details</h2>
+                <label for="undergraduate-college">Undergraduate College:</label>
+                <input type="text" id="undergraduate-college" name="undergraduate-college" placeholder="Enter Undergraduate College name" required>
+
+                <label for="undergraduate-year">Year of Completion:</label>
+                <input type="text" id="undergraduate-year" name="undergraduate-year" placeholder="Enter Undergraduate year of completion" required>
+
+                <label for="undergraduate-percentage">Percentage:</label>
+                <input type="text" id="undergraduate-percentage" name="undergraduate-percentage" placeholder="Enter Undergraduate percentage" required>
+            </div>
+
+            <!-- Resume Upload -->
+            <div class="form-section">
                 <h2>Resume Upload</h2>
-                <label for="resume">Upload Resume (PDF only):</label>
-                <input type="file" id="resume" name="resume" accept=".pdf" required>
+                <label for="resume" id="upload-label">Drag & drop your resume here or click to select a file (PDF only):</label>
+                <div id="drop-area" class="drop-area">
+                    <input type="file" id="resume" name="resume" accept=".pdf" required style="display:none;">
+                    <div id="file-info" class="file-info">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag & Drop or Click to Upload</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-section">
+                <button type="submit">Submit Application</button>
             </div>
         </form>
-        <!-- Submit Button -->
-        <div class="form-section">
-            <a href="thankyou.html"><button>Submit Application</button></a>
-        </div>
     </div>
 
+    <script type="module" src="apply.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </body>
 </html>
-

@@ -1,3 +1,4 @@
+/* General body styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -5,6 +6,7 @@ body {
     padding: 0;
 }
 
+/* Form container styles */
 .form-container {
     width: 40%;
     margin: 50px auto;
@@ -14,6 +16,7 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Heading styles */
 h1 {
     text-align: center;
     color: #333;
@@ -23,11 +26,12 @@ h2 {
     color: #333;
 }
 
+/* Form section styles */
 .form-section {
     margin-bottom: 20px;
 }
 
-
+/* Label styling */
 label {
     font-size: 14px;
     font-weight: bold;
@@ -36,7 +40,8 @@ label {
     color: #555;
 }
 
-input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="file"], input[type="radio"] {
+/* Input field styles */
+input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="file"], input[type="radio"], select {
     width: 95%;
     padding: 10px;
     margin-bottom: 15px;
@@ -46,10 +51,12 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="number"]
     color: #555;
 }
 
+/* Radio button styling */
 input[type="radio"] {
     width: auto;
 }
 
+/* Button styles */
 button {
     width: 100%;
     padding: 12px;
@@ -63,4 +70,72 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+/* Resume upload area styles */
+.drop-area {
+    position: relative;
+    padding: 40px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    border: 2px dashed #ddd; /* Dotted border for the drop area */
+    text-align: center;
+}
+
+.drop-area:hover {
+    background-color: #f0f8ff;
+}
+
+.drop-area:active {
+    transform: scale(0.98);
+    background-color: #e6f7ff;
+}
+
+/* File information message styles */
+.file-info {
+    font-size: 1.2rem;
+    color: #0066cc;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+/* Success and error message styling */
+.file-info.success {
+    color: #388e3c;
+}
+
+.file-info.error {
+    color: #e57373;
+}
+
+.file-info p {
+    margin: 0;
+    color: #0066cc;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.file-info.success p {
+    color: #388e3c;
+}
+
+.file-info.error p {
+    color: #e57373;
+}
+
+/* Icon styles for cloud upload */
+.drop-area i {
+    font-size: 3.5rem;
+    color: #0066cc;
+    margin-bottom: 15px;
+}
+
+/* Hover effect for drop area */
+.drop-area:hover {
+    background-color: #f0f8ff;
 }
