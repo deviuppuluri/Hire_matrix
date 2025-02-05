@@ -193,28 +193,78 @@ background-color: rgb(242, 242, 242);
 .company-item {
     background-color: white;
     padding: 20px;
-    width: 25%;
+    width: 15vw;
+    height: 35vh;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin:50px;
+    margin: 50px;
+    position: relative; /* Make the container relative for the overlay to work */
+    overflow: hidden; /* To ensure the overlay content doesn't overflow outside the container */
 }
 
+.home-img {
+    width: 100%;  /* Set image width to 100% to make it responsive */
+    height: 100%; /* Set image height to 100% to fit the container */
+    object-fit: cover; /* Ensures the image covers the whole area without distortion */
+    transition: opacity 0.3s ease; /* Smooth fade effect */
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Hide the overlay initially */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1;
+}
+
+.overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.overlay button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.overlay button:hover {
+    background-color: #0056b3;
+}
+
+/* Hover effect for the container */
 .company-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 20px rgba(190, 190, 190, 0.2);
 }
 
-.company-item h3 {
-    font-size: 1.5rem;
-    color: black;
-    font-weight: normal;
-    margin-bottom: 10px;
+/* Show overlay on hover */
+.company-item:hover .overlay {
+    opacity: 1;
+    visibility: visible;
 }
+
+
 
 .company-item p {
-    color: #555;
+    color: white;
     margin-bottom: 15px;
 }
 
