@@ -1,0 +1,472 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /*background-color: #eae4ff ;*/
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    position: fixed;
+    top:0;
+    left:0;
+    width:95%;
+    z-index: 1000;
+}
+#Hire{
+    height: 80px;
+    border-radius: 50%;
+}
+#main-col{
+    text-decoration: none;
+    color: #0000cc;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+header nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #333333;
+    font-size: 16px;
+}
+header nav a:hover{
+    color: black;
+    font-weight: bolder;
+}
+
+header .login a ,button{
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #0000cc;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 15px;
+    border: 1px solid transparent;
+}
+.login a:hover, button:hover{
+    border: 5px solid #4c4cf8;
+}
+
+header .login a:nth-child(1) {
+    background-color: transparent;
+    color: #0000cc;
+    border-color: #0000cc;
+}
+#register{
+    background-color: #047ffb;
+}
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 110px;
+    margin-top: 20px;
+}
+span{
+    font-size: 50px;
+}
+.content .text {
+    max-width: 50%;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 46px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 18px;
+    color: #666666;
+    margin-bottom: 30px;
+}
+
+.content img {
+    max-width: 50%;
+    height: 100%;
+}
+
+h1,p {
+    animation-duration: 3s;
+    animation-name: slide-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.main-content {
+text-align: center;
+padding: 50px 20px;
+background-color: rgb(242, 242, 242);
+}
+
+/* Featured Jobs Section */
+
+.featured-jobs {
+    background-color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.featured-jobs h2 {
+    margin-top: -30px;
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.job-listings {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.job-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 25%;
+    margin:50px;
+}
+
+.job-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.job-item h3 {
+    font-size: 1.5rem;
+    color: black;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.job-item p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.job-item button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.job-item button:hover {
+    background-color: #0056b3;
+}
+
+/* Company Profiles Section */
+.company-profiles {
+    background-color: white;
+    padding: 50px 0;
+}
+
+.company-profiles h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.company-listings {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.company-item {
+    background-color: white;
+    padding: 20px;
+    width: 15vw;
+    height: 35vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 50px;
+    position: relative; /* Make the container relative for the overlay to work */
+    overflow: hidden; /* To ensure the overlay content doesn't overflow outside the container */
+}
+
+.home-img {
+    width: 100%;  /* Set image width to 100% to make it responsive */
+    height: 100%; /* Set image height to 100% to fit the container */
+    object-fit: cover; /* Ensures the image covers the whole area without distortion */
+    transition: opacity 0.3s ease; /* Smooth fade effect */
+}
+
+.company-item h3 {
+    font-size: 1.5rem;
+    color: black;
+    margin-top: 10px;
+    font-weight: normal;
+    position: absolute;
+    bottom: 10px; /* Position the title at the bottom of the container */
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Hide the overlay initially */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1;
+}
+
+.overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.overlay button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.overlay button:hover {
+    background-color: #0056b3;
+}
+
+/* Hover effect for the container */
+.company-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Show overlay on hover */
+.company-item:hover .overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+.company-item h3 {
+    font-size: 1.5rem;
+    color: black;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.company-item p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.company-item button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.company-item button:hover {
+    background-color: #0056b3;
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Footer section style */
+       
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-left: 400px;
+    margin-right: 400px;
+    
+}
+
+.footer-section {
+    flex: 1;
+    margin: 15px 0;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.social-icons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-icon {
+    font-size: 24px;
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #1da1f2; /* Blue color on hover */
+}
+
+.social-icon i {
+    display: inline-block;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+
+/* Style for social icons */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icon {
+    font-size: 24px;
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for icons */
+.social-icon:hover {
+    color: #1da1f2; /* Example color on hover (blue) */
+}
+
+.social-icon i {
+    display: inline-block;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content .text {
+        max-width: 100%;
+    }
+
+    .content img {
+        max-width: 60%;
+        margin-top: 20px;
+    }
+}
+
+
+/* Add this CSS code to your styles.css file */
+
+.animated-image {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    transform: scale(1);
+    animation: scaleFadeInOut 5s ease-in-out infinite; /* Adjust the duration to your preference */
+}
+
+/* Keyframes for scaling and fading animation */
+@keyframes scaleFadeInOut {
+    0% {
+        opacity: 1;
+        transform: scale(1); /* Start at normal size */
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05); /* Scale slightly larger at the midpoint */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Return to normal size */
+    }
+}
